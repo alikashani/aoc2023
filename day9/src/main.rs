@@ -36,11 +36,11 @@ fn main() {
             while j < history.len() {
                 let a = history[i].clone();
                 let b = &mut history[j];
-                b.push(a.last().unwrap_or(&0) + b.last().unwrap_or(&0));
+                b.splice(..0, [b.first().unwrap_or(&0) - a.first().unwrap_or(&0)]);
                 i += 1;
                 j += 1;
             }
-            history.last().unwrap().last().unwrap().clone()
+            history.last().unwrap().first().unwrap_or(&0).clone()
         })
         .sum::<i32>();
 
