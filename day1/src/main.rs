@@ -40,7 +40,6 @@ fn num(line: &[u8], i: usize) -> Option<usize> {
 }
 
 fn main() {
-    // secret = ownerproof-3846147-1702362853-efd416ee4216
     // value = first digit + last digit
     // 
     let result = include_bytes!("../input.txt")
